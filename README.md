@@ -8,8 +8,10 @@ Uygulama İçeriği:
   - favorite servisi ile favori ekleme veya favori kaldırma
 
 Gereksinimler:
-> docker-compose version 1.25.4
-> PHP 7.2.28
+```bash
+docker-compose version 1.25.4
+PHP 7.2.28
+```
 
 ### Kurulum
 ```sh
@@ -20,12 +22,12 @@ $ chmod -R 777 storage && chmod -R 777 bootstrap/cache
 ```
 
 .env dosyası düzenlenmesi gereken alan
-> DB_HOST=DockerLocalIp
-> DB_PORT=3306
-> DB_DATABASE=homestead
-> DB_USERNAME=homestead
-> DB_PASSWORD=secret
-
+```DB_HOST=DockerLocalIp
+DB_PORT=3306
+DB_DATABASE=homestead
+DB_USERNAME=homestead
+DB_PASSWORD=secret
+```
 
 .env dosyası düzenlendikten sonra database migrate edilmesi gereklidir.
 ```sh
@@ -37,10 +39,7 @@ $ php artisan migrate
 $ php artisan passport:install
 ```
 
----------------------------------------------------------------------
-
 ### Servisler
-
--register servisi ile kullanıcı oluşturulmalıdır.
--login servisi ile client token oluşturuluyor.
--middleware korumalı sayfalara Header Authorization: Bearer token olarak gönderilmelidir.
+  - register servisi ile kullanıcı oluşturulmalıdır.
+  - login servisi ile client token oluşturuluyor.
+  - middleware korumalı sayfalara Header Authorization: Bearer token olarak gönderilmelidir.
